@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lightweight Ludo</title>
+    <style>
+        body { font-family: Arial; text-align: center; }
+        .board { display: grid; grid-template-columns: repeat(15, 40px); gap: 2px; margin: auto; }
+        .cell { width: 40px; height: 40px; background: #eee; border: 1px solid #ccc; }
+        .home { background: #fff; }
+        .red { background: #ff6b6b; }
+        .green { background: #51cf66; }
+        .yellow { background: #feca57; }
+        .blue { background: #48dbfb; }
+        .player { width: 20px; height: 20px; border-radius: 50%; position: absolute; top: 10px; left: 10px; }
+        button { padding: 10px 20px; margin-top: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Lightweight Ludo</h1>
+    <div class="board" id="board"></div>
+    <button onclick="rollDice()">Roll Dice</button>
+    <p id="status">Click Roll Dice to start!</p>
+
+    <script>
+        const board = document.getElementById('board');
+        let currentPlayer = 'red';
+        let diceValue = 0;
+        let hasRolled = false;
+
+        function createBoard() {
+            for (let i = 0; i < 225; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                if (i % 15 === 0 || i % 15 === 6) cell.classList.add('home');
+                board.appendChild(cell);
+            }
+        }
+
+        function rollDice() {
+            diceValue = Math.floor(Math.random() * 6) + 1;
+            hasRolled = true;
+            document.getElementById('status').textContent = `Rolled ${diceValue}. Player: ${currentPlayer}`;
+        }
+
+        function movePlayer(player, steps) {
+            // Simplified movement logic
+            console.log(`${player} moved ${steps} steps`);
+            // Add more complex movement logic here if needed
+        }
+
+        createBoard();
+    </script>
+</body>
+</html>
