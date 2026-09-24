@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Player Ludo Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ludo-container">
+        <h1>4 Player Ludo Game</h1>
+        <p class="rules">Rule: Roll the dice to move your token (goti). Each player needs a 6 to open their first token from the base.</p>
+        
+        <div class="game-board" id="board"></div>
+        
+        <div class="controls">
+            <button id="roll-die" onclick="rollDie()">Roll Dice</button>
+            <button id="move-token" onclick="moveToken()" disabled>Move Token</button>
+            
+            <p id="dice-result"></p>
+            <p id="current-player">Current Player: <span id="player-name">Red</span></p>
+            <p id="game-message"></p>
+        </div>
+        
+        <div class="players-info">
+            <div class="player-card red" id="red-player">
+                <h3>Red Player</h3>
+                <p>Tokens: <span id="red-tokens">0/4</span></p>
+            </div>
+            <div class="player-card green" id="green-player">
+                <h3>Green Player</h3>
+                <p>Tokens: <span id="green-tokens">0/4</span></p>
+            </div>
+            <div class="player-card yellow" id="yellow-player">
+                <h3>Yellow Player</h3>
+                <p>Tokens: <span id="yellow-tokens">0/4</span></p>
+            </div>
+            <div class="player-card blue" id="blue-player">
+                <h3>Blue Player</h3>
+                <p>Tokens: <span id="blue-tokens">0/4</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
